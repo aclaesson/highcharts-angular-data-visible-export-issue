@@ -1,13 +1,17 @@
 <button (click)="export('image/png')" mat-menu-item>
   <span>PNG</span>
 </button>
-<button (click)="changeVisible()" mat-menu-item>
-  <span>Change visible on item 2</span>
+<button (click)="changeVisibleNotWorking()" mat-menu-item>
+  <span>Change visible not working when exporting</span>
+</button>
+<button (click)="changeVisibleWorking()" mat-menu-item>
+  <span>Change visible working when exporting</span>
 </button>
 
 <highcharts-chart
   [Highcharts]="Highcharts"
   [options]="chartOptions"
+  (chartInstance)="logChartInstance($event)"
   [callbackFunction]="chartCallback"
 >
 </highcharts-chart>
